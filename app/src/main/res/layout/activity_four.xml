@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FourActivity">
+
+    <TextView
+        android:id="@+id/textViewTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Вопрос номер 4."
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.03"/>
+
+    <TextView
+        android:id="@+id/questionTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Какой украинский президент продавал нам ракеты?"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTV"
+        app:layout_constraintVertical_bias="0.03"/>
+
+    <RadioGroup
+        android:id="@+id/radioGroupRG"
+        android:padding="16dp"
+        android:background="@color/rbcolor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/questionTV"
+        app:layout_constraintVertical_bias="0.02"
+        >
+
+        <RadioButton
+            android:id="@+id/question4.1RB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Зеленский."
+            android:checked="true"
+            android:onClick="radioButtonClick"/>
+
+        <RadioButton
+            android:id="@+id/question4.2RB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Кучма."
+            android:checked="true"
+            android:onClick="radioButtonClick"/>
+
+        <RadioButton
+            android:id="@+id/question4.3RB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Порошенко."
+            android:checked="true"
+            android:onClick="radioButtonClick"/>
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/nextQuestionBTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="Следующий вопрос."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupRG"
+        app:layout_constraintVertical_bias="0.02"
+        />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
