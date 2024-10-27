@@ -31,7 +31,7 @@ class FirstActivity : AppCompatActivity() {
                 if (radio.text == "Наполовину.") scores = 100 else scores = 0
 
                 val intent = Intent(this, SecondActivity::class.java)
-                intent.putExtra("scores", scores.toString())
+                intent.putExtra("result", scores.toString())
                 startActivity(intent)
             }
         }

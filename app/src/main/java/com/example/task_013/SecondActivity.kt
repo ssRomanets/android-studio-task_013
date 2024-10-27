@@ -17,7 +17,7 @@ class SecondActivity : AppCompatActivity() {
     private lateinit var radioGroupRG: RadioGroup
     private lateinit var nextQuestionBTN: Button
 
-    var curScores:Int = 0
+    var prevScores:Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,7 +28,7 @@ class SecondActivity : AppCompatActivity() {
 
         var intentIn: Intent
         intentIn = getIntent()
-        curScores = intentIn.getStringExtra("scores")!!.toInt()
+        prevScores = intentIn.getStringExtra("result")!!.toInt()
 
         nextQuestionBTN.setOnClickListener{
             var id: Int = radioGroupRG.checkedRadioButtonId
@@ -40,7 +40,7 @@ class SecondActivity : AppCompatActivity() {
                 if (radio.text == "ВС России.") scores = 100 else scores = 0
 
                 val intentOut = Intent(this, ThirdActivity::class.java)
-                intentOut.putExtra("scores", (scores+curScores).toString())
+                intentOut.putExtra("result", (prevScores + scores).toString())
                 startActivity(intentOut)
             }
         }

@@ -16,7 +16,7 @@ class FiveActivity : AppCompatActivity() {
     private lateinit var radioGroupRG: RadioGroup
     private lateinit var finalGameBTN: Button
 
-    var curScores:Int = 0
+    var prevScores:Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,7 +27,7 @@ class FiveActivity : AppCompatActivity() {
 
         var intentIn: Intent
         intentIn = getIntent()
-        curScores = intentIn.getStringExtra("scores")!!.toInt()
+        prevScores = intentIn.getStringExtra("result")!!.toInt()
 
         finalGameBTN.setOnClickListener{
             var id: Int = radioGroupRG.checkedRadioButtonId
@@ -39,7 +39,7 @@ class FiveActivity : AppCompatActivity() {
                 if (radio.text == "Порошенко.") scores = 100 else scores = 0
 
                 val intentOut = Intent(this, ResultActivity::class.java)
-                intentOut.putExtra("scores", (scores+curScores).toString())
+                intentOut.putExtra("result", (prevScores + scores).toString())
                 startActivity(intentOut)
             }
         }

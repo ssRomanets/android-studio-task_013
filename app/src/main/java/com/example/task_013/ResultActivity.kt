@@ -24,7 +24,7 @@ class ResultActivity : AppCompatActivity() {
 
         var intentIn: Intent
         intentIn = getIntent()
-        val resultData = intentIn.getStringExtra("scores")!!.toInt()
+        val resultData = intentIn.getStringExtra("result")!!.toInt()
 
         resultTV.text = "Результат игры " + resultData.toString() + " очков."
 
